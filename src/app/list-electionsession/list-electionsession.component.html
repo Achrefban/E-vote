@@ -1,0 +1,62 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Elections</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search..."  [(ngModel)]="searchText" autocomplete="off">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <i class="now-ui-icons ui-1_zoom-bold"></i>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <thead class=" text-primary">
+              <th >Etat</th>
+              <th>Description</th>
+              <th>Candidats</th>
+              <th>Election</th>
+              <th>Actions</th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let elections1 of electionsSession | filter:searchText">
+                <td >{{elections1.etat}}</td>
+                <td>{{elections1.descriptionElection}}</td>
+                <td>
+                  <p *ngFor="let cc of elections1.candidatElection">{{cc.firstname}} {{cc.lastname}} </p>
+                </td>
+                <td>
+                  <p *ngFor="let type of elections1.electionName">{{type.election}} </p>
+                </td>
+                <td>
+
+
+
+                  <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <i class="now-ui-icons business_badge"></i>
+                  </button>
+                  <button   type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <i class="now-ui-icons loader_gear"></i>
+                  </button>
+                  <button (click)="showModal()" type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove" data-toggle="modal" data-target="#myModal">
+                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </button>
+
+
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

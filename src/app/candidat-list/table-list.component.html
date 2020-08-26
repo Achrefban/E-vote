@@ -1,0 +1,65 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Candidats</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search..." [(ngModel)]="searchText" autocomplete="off">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <i class="now-ui-icons ui-1_zoom-bold"></i>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <thead class=" text-primary">
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Parti Politique</th>
+              <th >Numéro</th>
+              <th>Actions</th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let candidat of candidats | filter:searchText">
+                <td>{{candidat.firstname}}</td>
+                <td>{{candidat.lastname}}</td>
+                <td>{{candidat.partiPolitique}}</td>
+                <td>{{candidat.numero}}</td>
+                <td>
+
+                  <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <i class="now-ui-icons business_badge"></i>
+                  </button>
+                  <button  [routerLink]="['/candidat/update/',candidat._id]" type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                    <i class="now-ui-icons loader_gear"></i>
+                  </button>
+                  <button [routerLink]="['/candidat-list']" (click)="delete(candidat._id)" type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove" data-toggle="modal" >
+                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </button>
+
+
+
+
+
+
+
+
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

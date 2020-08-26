@@ -1,0 +1,92 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8 election_center">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Voulez-Vous Ajouter Une Election ?</h5>
+        </div>
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Type d'election</label>
+                <ng-multiselect-dropdown-angular7
+                        [placeholder]="'Type'"
+                        [data]="elections"
+                        [settings]="dropdownSettingsElection"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                        [(ngModel)]="election.electionName"
+                >
+                </ng-multiselect-dropdown-angular7>
+              </div>
+            </div>
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Candidats</label>
+                <ng-multiselect-dropdown-angular7
+                        [placeholder]="'Candidats'"
+                        [data]="dropdownList"
+                        [settings]="dropdownSettings"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                        [(ngModel)]="election.candidatElection"
+                >
+                </ng-multiselect-dropdown-angular7>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control election-input" [(ngModel)]="election.descriptionElection">
+              </div>
+            </div>
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Type de compte</label>
+                <select  class="form-control" [(ngModel)]="election.etat" class="form-control">
+                  <option value="active">Active</option>
+                  <option value="descative">Désactive</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+              </div>
+            </div>
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+
+
+                <button [routerLink]="['/candidat-list']" (click)="add()" type="submit" class="btn btn-info btn-fill pull-right">Ajouter</button>
+                <button [routerLink]="['/dashboard']"  type="submit" class="btn btn-info btn-fill pull-right">Annuler</button>
+
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

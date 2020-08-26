@@ -1,0 +1,83 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="wrapper">
+  <div class="header bg-gradient-danger py-7 py-lg-8 ">
+    <div class="container">
+      <div class="header-body text-center mb-7">
+        <div class="row justify-content-center">
+
+        </div>
+      </div>
+    </div>
+    <div class="separator separator-bottom separator-skew zindex-100">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="main-content">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header text-center ">
+            <h1>Espace de vote</h1>
+            <div class="card-body all-icons" >
+              <div class="row justify-content-center" >
+                <table class="table">
+                  <thead class=" text-primary">
+                  <th>Description</th>
+                  <th>Candidats</th>
+                  <th>Election</th>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let elections1 of electionsSession">
+                    <td>{{elections1.descriptionElection}}</td>
+                    <td>
+                      <p *ngFor="let cc of elections1.candidatElection">
+                        Candidat : {{cc.firstname}} {{cc.lastname}}, numéro : {{cc.numero}}
+                        <button  [routerLink]="['electeur/auth']"  (click)="alert()">Voter</button>
+                      </p>
+
+                    </td>
+                    <td>
+                      <p *ngFor="let type of elections1.electionName">{{type.election}} </p>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <nav>
+          <ul>
+            <li>
+
+            </li>
+            <li>
+              <a href="https://www.creative-tim.com/about-us">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="http://blog.creative-tim.com">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright">
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>

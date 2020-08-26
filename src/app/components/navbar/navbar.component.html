@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-end" id="collapseExample" [ngbCollapse]="isCollapsed">
+          <form>
+
+          </form>
+
+            <button *ngIf="loggedIn" (click)="logoutAndNavigate()">Logout</button>
+
+          <ul class="navbar-nav">
+          </ul>
+        </div>
+    </div>
+</nav>
